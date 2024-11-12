@@ -1,8 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
+
+
+
 import Link from 'next/link';
 import { FaPercentage } from 'react-icons/fa';     // Percentage icon for discount
 import { FaAward } from 'react-icons/fa';          // Award icon for experience
 import { FaHandshake } from 'react-icons/fa';  
 import { FaUserShield, FaWrench, FaThumbsUp, FaDollarSign, FaRegClock } from 'react-icons/fa';
+import Image from 'next/image';
 
 
 
@@ -99,8 +104,16 @@ export default function page() {
 
   return (
     <div>
-      <div className="relative">
-        <img src="/coverImage.jpg" alt="Cover Image" />
+    <div className="relative h-[116vh] w-full">
+        <Image
+          src="/coverImage.jpg"
+          alt="Cover Image"
+          layout="responsive"
+          width={1920}  // Adjust as needed
+          height={1080} // Adjust as needed
+          style={{ objectFit: 'cover' }}
+          className="z-10"
+        />
         <div className="absolute bg-custom-gradient z-10 top-0 left-0 w-full h-[116vh]  flex justify-center  flex-col">
           <div className="flex flex-col items-center   gap-y-4  ">
             <h1 className="text-7xl font-bold text-[#081F46] font-dosis">PURE WATER</h1>
@@ -211,11 +224,21 @@ Our experienced technicians are dedicated to customer satisfaction and transpare
         <div className='bg-[#1E65FF] shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] max-h-56 w-full flex justify-end rounded-xl  '>
           <div className='p-10'>
           <p className='text-4xl text-white font-bold font-dosis'>
-            No.1 Water Purifier in Bareilly
+            No.1 Water Purifier in <br />Bareilly
           </p>
           <button className='bg-white text-[#1E65FF] shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] rounded-full px-4 py-2 mt-4'>Know More</button>
           </div>
-          <img src='https://wavio.b-cdn.net/wp-content/uploads/2022/10/5hyy.png' alt='' className='object-cover max-w-xl '/>
+          <div className="relative max-w-xl mx-auto">
+        <Image
+          src="/5hyy.png"
+          alt="RO Purifier Image"
+          
+          width={400}  // Adjust width based on your requirement
+          height={300} // Adjust height based on your requirement
+        
+          className="rounded-xl object-cover"
+        />
+      </div>
         </div>
         </div>
       </section>
